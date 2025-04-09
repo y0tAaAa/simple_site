@@ -1,0 +1,301 @@
+/* Общие стили и сброс */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  color: #000000;
+  line-height: 1.6;
+  overflow-x: hidden; /* Убираем горизонтальный скролл */
+}
+
+/* Контейнер */
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Header */
+.header {
+  background: #EEEFF1;
+  padding: 79px 0;
+}
+
+.header__container {
+  padding-left: 400px; /* Левый отступ как в макете */
+}
+
+.header__menu {
+  list-style: none;
+  display: flex;
+  gap: 42px; /* Отступ между пунктами меню */
+  align-items: center;
+}
+
+.header__menu-item {
+  display: inline-block;
+}
+
+.header__menu-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.header__menu-link--active,
+.header__menu-link:hover {
+  color: #34547A;
+}
+
+/* Hero */
+.hero {
+  background: #EEEFF1;
+  height: 700px; /* Точная высота из макета */
+  display: flex;
+  align-items: center;
+}
+
+.hero__container {
+  padding-left: 400px; /* Левый отступ как в макете */
+  text-align: left;
+}
+
+.hero__title {
+  font-size: 48px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 60px;
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  color: #727272;
+  max-width: 540px;
+  margin-bottom: 65px;
+  line-height: 26px;
+}
+
+.hero__btn {
+  display: inline-block;
+  background: #34547A;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 25px 41px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.hero__btn:hover {
+  background: #1F2A38;
+}
+
+/* About */
+.about {
+  background: #FFFFFF;
+  height: 600px; /* Точная высота из макета */
+  display: flex;
+  flex-direction: column;
+}
+
+.about__container {
+  padding: 112px 0 0;
+  text-align: center;
+}
+
+.about__title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.about__text {
+  font-size: 16px;
+  color: #727272;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 26px;
+}
+
+/* Blue Stripe inside About */
+.about__stripe {
+  background: #34547A;
+  padding: 50px 0;
+  margin-top: auto; /* Прижимает к нижней части секции */
+}
+
+.about__stripe-container {
+  width: 100%;
+}
+
+.about__stripe-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px; /* Отступ между элементами */
+}
+
+.about__stripe-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about__stripe-icon {
+  width: 60px;
+  height: auto;
+}
+
+.about__stripe-info {
+  text-align: left;
+}
+
+.about__stripe-number {
+  display: block;
+  font-size: 21px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+
+.about__stripe-label {
+  display: block;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* How I Work */
+.how {
+  background: #EEEFF1;
+  height: 1004px; /* Точная высота из макета */
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.how__container {
+  width: 100%;
+  padding: 0 40px;
+}
+
+.how__title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.how__subtitle {
+  font-size: 16px;
+  color: #727272;
+  max-width: 540px;
+  margin: 0 auto 50px;
+  line-height: 26px;
+}
+
+.how__video-container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.how__video-container video {
+  width: 100%;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  background: #34547A;
+  color: #FFFFFF;
+  height: 151px; /* Точная высота из макета */
+  display: flex;
+  align-items: center;
+}
+
+.footer__container {
+  width: 100%;
+  padding: 0 40px;
+}
+
+.footer__author {
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.footer__rights {
+  font-size: 13px;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .header__container,
+  .hero__container {
+      padding-left: 40px;
+  }
+
+  .about__stripe-list {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__container,
+  .hero__container {
+      padding-left: 20px;
+  }
+
+  .header__menu {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .hero__title {
+      font-size: 32px;
+  }
+
+  .hero__subtitle {
+      font-size: 14px;
+      max-width: 100%;
+  }
+
+  .about__text {
+      width: 90%;
+  }
+
+  .about__stripe-list {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .how__video-container {
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .about,
+  .how,
+  .footer {
+      height: auto;
+      padding: 20px 0;
+  }
+}
