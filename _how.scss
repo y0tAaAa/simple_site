@@ -1,0 +1,38 @@
+@use 'variables';
+
+.how {
+  background: variables.$color-background;
+  height: 1004px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  &__container {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  &__title {
+    font-size: variables.$font-size-medium;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    font-size: variables.$font-size-base;
+    color: variables.$color-text-secondary;
+    max-width: 540px;
+    margin: 0 auto 50px;
+    line-height: 26px;
+  }
+
+  &__video-container {
+    max-width: 1110px;
+    margin: 0 auto;
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

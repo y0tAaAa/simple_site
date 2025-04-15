@@ -1,0 +1,24 @@
+@use 'variables';
+
+.footer {
+  background: variables.$color-primary;
+  color: variables.$color-white;
+  height: 151px;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  &__author {
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &__rights {
+    font-size: variables.$font-size-small;
+  }
+}

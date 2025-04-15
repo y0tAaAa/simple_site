@@ -1,0 +1,45 @@
+@use 'variables';
+@use 'mixins';
+
+.hero {
+  background: variables.$color-background;
+  height: 700px;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    padding-left: 400px;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: variables.$font-size-large;
+    font-weight: 500;
+    color: variables.$color-text;
+    margin-bottom: 60px;
+  }
+
+  &__subtitle {
+    font-size: variables.$font-size-base;
+    color: variables.$color-text-secondary;
+    max-width: 540px;
+    margin-bottom: 65px;
+    line-height: 26px;
+  }
+
+  &__btn {
+    display: inline-block;
+    background: variables.$color-primary;
+    color: variables.$color-white;
+    text-decoration: none;
+    padding: 25px 41px;
+    font-size: variables.$font-size-base;
+    font-weight: 400;
+    @include mixins.uppercase-text;
+    transition: background 0.3s;
+
+    &:hover {
+      background: variables.$color-button-hover;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use 'variables';
+
+@media (max-width: 1200px) {
+  .header__container,
+  .hero__container {
+      padding-left: 40px;
+  }
+
+  .about__stripe-list {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__container,
+  .hero__container {
+      padding-left: 20px;
+  }
+
+  .header__menu {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .hero__title {
+      font-size: 32px;
+  }
+
+  .hero__subtitle {
+      font-size: 14px;
+      max-width: 100%;
+  }
+
+  .about__text {
+      width: 90%;
+  }
+
+  .about__stripe-list {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .how__video-container {
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .about,
+  .how,
+  .footer {
+      height: auto;
+      padding: 20px 0;
+  }
+}
