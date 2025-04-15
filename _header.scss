@@ -1,0 +1,36 @@
+@use 'variables';
+@use 'mixins';
+
+.header {
+  background: variables.$color-background;
+  padding: 79px 0;
+
+  &__container {
+    padding-left: 400px;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    gap: 42px;
+    align-items: center;
+
+    &-item {
+      display: inline-block;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: variables.$color-text;
+      font-size: variables.$font-size-base;
+      font-weight: 500;
+      @include mixins.uppercase-text;
+      transition: color 0.3s;
+
+      &--active,
+      &:hover {
+        color: variables.$color-primary;
+      }
+    }
+  }
+}
