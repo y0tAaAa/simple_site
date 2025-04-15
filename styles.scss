@@ -1,0 +1,344 @@
+// _variables.scss
+$color-text: #000000;
+$color-text-secondary: #727272;
+$color-primary: #34547A;
+$color-white: #FFFFFF;
+$color-background: #EEEFF1;
+$color-button-hover: #1F2A38;
+
+$font-size-base: 16px;
+$font-size-large: 48px;
+$font-size-medium: 32px;
+$font-size-small: 13px;
+$font-size-stripe-number: 21px;
+
+$font-family: 'Arial', sans-serif;
+
+// _mixins.scss
+@mixin uppercase-text {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+// _base.scss
+@use 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  width: 100%;
+  margin: 0 auto;
+  font-family: variables.$font-family;
+  color: variables.$color-text;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+// _header.scss
+@use 'variables';
+@use 'mixins';
+
+.header {
+  background: variables.$color-background;
+  padding: 79px 0;
+
+  &__container {
+    padding-left: 400px;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    gap: 42px;
+    align-items: center;
+
+    &-item {
+      display: inline-block;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: variables.$color-text;
+      font-size: variables.$font-size-base;
+      font-weight: 500;
+      @include mixins.uppercase-text;
+      transition: color 0.3s;
+
+      &--active,
+      &:hover {
+        color: variables.$color-primary;
+      }
+    }
+  }
+}
+
+// _hero.scss
+@use 'variables';
+@use 'mixins';
+
+.hero {
+  background: variables.$color-background;
+  height: 700px;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    padding-left: 400px;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: variables.$font-size-large;
+    font-weight: 500;
+    color: variables.$color-text;
+    margin-bottom: 60px;
+  }
+
+  &__subtitle {
+    font-size: variables.$font-size-base;
+    color: variables.$color-text-secondary;
+    max-width: 540px;
+    margin-bottom: 65px;
+    line-height: 26px;
+  }
+
+  &__btn {
+    display: inline-block;
+    background: variables.$color-primary;
+    color: variables.$color-white;
+    text-decoration: none;
+    padding: 25px 41px;
+    font-size: variables.$font-size-base;
+    font-weight: 400;
+    @include mixins.uppercase-text;
+    transition: background 0.3s;
+
+    &:hover {
+      background: variables.$color-button-hover;
+    }
+  }
+}
+
+// _about.scss
+@use 'variables';
+@use 'mixins';
+
+.about {
+  background: variables.$color-white;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    padding: 112px 0 0;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: variables.$font-size-medium;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+
+  &__text {
+    font-size: variables.$font-size-base;
+    color: variables.$color-text-secondary;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 26px;
+  }
+
+  &__stripe {
+    background: variables.$color-primary;
+    padding: 50px 0;
+    margin-top: auto;
+
+    &-container {
+      width: 100%;
+    }
+
+    &-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 45px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-icon {
+      width: 60px;
+      height: auto;
+    }
+
+    &-info {
+      text-align: left;
+    }
+
+    &-number {
+      display: block;
+      font-size: variables.$font-size-stripe-number;
+      font-weight: 500;
+      color: variables.$color-white;
+      margin-bottom: 5px;
+    }
+
+    &-label {
+      display: block;
+      font-size: variables.$font-size-base;
+      color: variables.$color-white;
+      @include mixins.uppercase-text;
+    }
+  }
+}
+
+// _how.scss
+@use 'variables';
+
+.how {
+  background: variables.$color-background;
+  height: 1004px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  &__container {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  &__title {
+    font-size: variables.$font-size-medium;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    font-size: variables.$font-size-base;
+    color: variables.$color-text-secondary;
+    max-width: 540px;
+    margin: 0 auto 50px;
+    line-height: 26px;
+  }
+
+  &__video-container {
+    max-width: 1110px;
+    margin: 0 auto;
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// _footer.scss
+@use 'variables';
+
+.footer {
+  background: variables.$color-primary;
+  color: variables.$color-white;
+  height: 151px;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  &__author {
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &__rights {
+    font-size: variables.$font-size-small;
+  }
+}
+
+// _responsive.scss
+@use 'variables';
+
+@media (max-width: 1200px) {
+  .header__container,
+  .hero__container {
+      padding-left: 40px;
+  }
+
+  .about__stripe-list {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__container,
+  .hero__container {
+      padding-left: 20px;
+  }
+
+  .header__menu {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .hero__title {
+      font-size: 32px;
+  }
+
+  .hero__subtitle {
+      font-size: 14px;
+      max-width: 100%;
+  }
+
+  .about__text {
+      width: 90%;
+  }
+
+  .about__stripe-list {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .how__video-container {
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .about,
+  .how,
+  .footer {
+      height: auto;
+      padding: 20px 0;
+  }
+}
+
+// main.scss
+@use 'base';
+@use 'header';
+@use 'hero';
+@use 'about';
+@use 'how';
+@use 'footer';
+@use 'responsive';
